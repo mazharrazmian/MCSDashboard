@@ -1,0 +1,42 @@
+body{
+    background:white url(images/background.jpg) no-repeat;
+    background-size:99vw 50vh;
+}
+a{
+    text-decoration:none;
+    font-family: 'Petit Formal Script', cursive;
+}
+button{
+    width:150px;
+    height:40px;
+    margin-top:20px;
+    border-radius:20px;
+}
+h1{
+    color: rgba(0, 0, 0, 0.8);
+    border:2px solid blue;
+    font-family: 'Lobster', cursive;
+    text-align:center;
+    width: 95vw;
+    height: 20vh;
+    font-size: 6vw;
+    margin:1vw;
+
+}
+h2{
+    border:2px solid blue;
+    font-family: 'Lobster', cursive;
+    text-align:center;
+    width: 95vw;
+    height: 20vh;
+    font-size: 4vw;
+    margin:1vw;
+}
+
+p{
+    font-family: 'Playfair Display', serif;
+}
+.chart-wrapper{
+    margin:30px;
+    box-shadow: 3px 3px 10px;
+}

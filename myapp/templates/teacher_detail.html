@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3> {{teacher.first_name}} </h3>
+<h3> {{teacher.age}}</h3>
+<h3> {{teacher.gender}}</h3>
+<h3> {{teacher.email}}</h3>
+<h3>
+    {% if teacher.classes_taught is defined %}
+    {{teacher.classes_taught}}
+    {% endif %}
+ </h3>
+<h3> {{teacher.qualification}}</h3>
+<h3> {{teacher.subject}} </h3>
+
+<a href="{% url 'logout' %}"> Log out </a>
+{% endblock %}

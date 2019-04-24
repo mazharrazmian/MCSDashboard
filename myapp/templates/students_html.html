@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/students.css' %}">
+    </head>
+    <body>
+        <div class="web table-wrapper">
+        <h1> Web Students</h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in web_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="os table-wrapper">
+        <h1> Operating System Students </h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in os_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="req table-wrapper">
+        <h1> Requirement Engineering</h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in req_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="business table-wrapper">
+        <h1> Business Writing</h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in business_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="networks table-wrapper">
+        <h1> Computer Networks</h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in net_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="ethics table-wrapper">
+        <h1> Professional Ethics </h1>
+        <table>
+            <tr>
+                <th>Student ID </th>
+                <th> Student Name </th>
+            </tr>
+        {% for student in ethics_students %}
+        <tr>
+            <td> {{student.serial_no}}</td>
+            <td><a href ="/students/{{student.serial_no}}"> {{student.first_name}}  {{student.last_name}} </a> </td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div class="button">
+<a href="{% url 'logout' %}"> <button> Log out </button></a>
+</div>
+
+
+    </body>
+</html>

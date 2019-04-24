@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Urban by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>MCS Page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="{% static 'myapp/main.css' %}">
+		<script type="text/javascript" src="{% static 'myapp/js/index.js' %}"> </script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"> </script>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">Dashboard <span>of MCS</span></a></div>
+				<a href="#menu" id="menu1">Menu</a>
+			</header>
+
+		<!-- Nav -->
+
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'index' %}">Home</a></li>
+					<li><a href="{% url 'students' %}">Students</a></li>
+					<li><a href="{% url 'teachers' %}">Teachers</a></li>
+					<li><a href="{% url 'logout' %}">Sign out</a></li>
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+		<div id="div">
+			<section id="banner">
+				<div class="inner">
+					<header>
+						<marquee> <h2>Register for new courses before 15th February </h2></marquee>
+						<h1>This is MCS</h1>
+						<p>Located in the heart of Rawalpindi<br />on Khadim Husaain Road</p>
+					</header>
+					<a href="#main" class="button big scrolly">Learn More</a>
+				</div>
+			</section>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<!-- 2 Columns -->
+								<div class="flex flex-2">
+									<div class="col col1">
+										<div class="image round fit">
+											<a href="generic.html" class="link"><img src="{% static 'myapp/images/ug.jpg' %}" alt="" /></a>
+										</div>
+									</div>
+									<div class="col col2">
+										<h3>Undergraduate Program</h3>
+										<p>MCS offers undergraduate degrees in two streams namely Electrical (Telecommunication) Engineering and Software Engineering.[1] Each year a standard NET (NUST Entrance Test) is conducted for the undergraduate enrollment in these courses.</p>
+										<p>The students are also enrolled via SAT subject tests. Some students are also selected as Gentlemen Cadets of Pakistan army through ISSB. Moreover, wards of army personnel are also selected as PC's(Paying Cadets) and ASC's (Additional Selected Cadets).  </p>
+										<a href="#" class="button">Learn More</a>
+									</div>
+								</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style2">
+						<div class="inner">
+							<div class="flex flex-2">
+								<canvas style="margin:30px;" id="myChart"></canvas>
+								<canvas style="margin-top:100px;" id="myChart1"></canvas>
+								<div class="col col1 first">
+
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Section -->
+					<section class="wrapper style1">
+						<div class="inner">
+							<header class="align-center">
+								<h2>Faculty and Students make the college</h2>
+								<p>We have experienced faculty with talented and intellegent students</p>
+							</header>
+							<div class="flex flex-3">
+								<div class="col align-center">
+									<div class="image round fit">
+										<img src="{% static 'myapp/images/students.jpg' %}" alt="" />
+									</div>
+									<p>Our students have been serving the country in different fields. Click here to see a list of them </p>
+									<a href="{% url 'students' %}" class="button">Learn More</a>
+								</div>
+								<div class="col align-center">
+									<div class="image round fit">
+										<img style="height:300px;" src="{% static 'myapp/images/faculty.jpg' %}"alt="" />
+									</div>
+									<p>Sed congue elit malesuada nibh, a varius odio vehicula aliquet. Aliquam consequat, nunc quis sollicitudin aliquet. </p>
+									<a href="{% url 'teachers' %}" class="button">Learn More</a>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+			</div>
+			<a href="{% url 'logout' %}"> <button style="width:80%; margin-left:10%; margin-right:10%"> Log out </button></a>
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-snapchat"><span class="label">Snapchat</span></a></li>
+					</ul>
+
+				</div>
+			</footer>
+</div>
+		<!-- Scripts -->
+
+	</body>
+</html>

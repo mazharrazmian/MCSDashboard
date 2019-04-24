@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+
+        <meta charset="utf-8">
+        <title>MCS Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/index.css' %}">
+        <script type="text/javascript" src="{% static 'myapp/js/index.js' %}"> </script>
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Petit+Formal+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"> </script>
+    </head>
+    <body>
+       <marquee><h1> Military College of Signals</h1></marquee>
+
+        <h2> Welcome home, here you can see all details of your college </h2>
+
+        <a href="/students"> Check all students and their details here </a>
+        <br/>
+
+        <a href="/teachers"> Check details of all of your teachers here </a>
+        <br/>
+        <div class="chart-wrapper">
+        <canvas id="myChart"></canvas>
+    </div>
+         <a href="{% url 'logout' %}"> <button> Log out </button></a>
+    </body>
+</html>

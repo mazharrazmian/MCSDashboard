@@ -1,0 +1,49 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<div class="login">
+<h2> Login </h2>
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <label>Username</label> <input type="text" name="username">
+    <label>Password</label> <input type="password" name="password">
+    <button type="submit"> Submit </button>
+</form>
+</div>
+<div class="signup">
+<h2> Or Register </h2>
+<form action="{% url 'signup' %}" method="post">
+    {% csrf_token %}
+    <label>First Name</label> <input type="text" name="first_name">
+    <label>Last Name</label> <input type="text" name="last_name">
+    <label>Username</label> <input type="text" name="username">
+    <label>Email</label> <input type="email" name="email">
+    <label>Password</label> <input type="password" name="password">
+    <button type="submit"> Submit </button>
+</form>
+</div>
+<style>
+body{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+input{
+    display:block;
+    border-radius:10px;
+    width:300px;
+    height:30px;
+    margin: 20px;
+}
+label{
+    font-wight:500;
+}
+button{
+    border-radius:5px;
+    width:200px;
+    height:50px;
+    margin:50px 0px 50px 0px;
+}
+</style>
+</html>

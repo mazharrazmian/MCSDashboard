@@ -1,0 +1,54 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/teachers.css' %}">
+    </head>
+    <body>
+
+{% block content %}
+
+<h1> Here are the teachers </h1>
+<div class="card-wrapper">
+{% for teacher in teachers %}
+
+<div class="card">
+ {% if 'Male' == teacher.gender %}
+  <img src="{% static 'myapp/images/man_profile.png' %}" alt="John" style="width:100%">
+{% else %}
+<img src="{% static 'myapp/images/woman_profile.png' %}" alt="John" style="width:100%">
+{% endif %}
+
+  <h1>{{teacher.first_name}} {{teacher.last_name}}</h1>
+  <h1> {{teacher.id}} </h1>
+  <h2 class="title">Subjects Taught</h2>
+  <p>{{teacher.subject}}</p>
+  <h2 class="title"> Address </h2>
+  <p> {{teacher.email}} </p>
+  <h2 class="title"> Gender </h2>
+  <p> {{teacher.gender}} </p>
+  <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>Contact</button></p>
+</div>
+
+{% endfor %}
+</div>
+{{teacher.id}}
+{{teacher.email}}
+{{teacher.gender}}
+{{teacher.subject}}
+
+
+
+<a href="{% url 'logout' %}"> <button> Log out </button></a>
+
+{% endblock %}
+</body>
+
+</html>

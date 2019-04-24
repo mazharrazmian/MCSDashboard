@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Student Detail</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/student_detail.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+<div class="card">
+
+  <img src="{% static 'myapp/images/man_profile.png' %}" alt="John" style="width:100%">
+  <h1>{{student.first_name}} {{student.last_name}}</h1>
+  <h1> {{student.serial_no}} </h1>
+  <h2 class="title">Subjects Studied</h2>
+  <p>{{student.subjects}}</p>
+  <h2 class="title"> Address </h2>
+  <p> {{student.address}} </p>
+  <h2 class="title"> Attendance </h2>
+  <p> {{student.attendance}} </p>
+  <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>Contact</button></p>
+</div>
+
+
+        <a href="{% url 'logout' %}"> <button> Log out </button></a>
+    </body>
+</html>
