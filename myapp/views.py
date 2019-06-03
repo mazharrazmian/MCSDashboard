@@ -11,7 +11,7 @@ from django.core import serializers
 # Create your views here.
 
 
-
+#Loads the data from database when the home page loads
 def serve_data_view(request):
     if request.method=="GET":
         students = Student.objects.all()
@@ -21,6 +21,7 @@ def serve_data_view(request):
         business_students = []
         ethics_students = []
         net_students = []
+        #Partitioning different types of students
         for student in students:
             if ' Web ' in student.subjects:
                 web_students.append(student)
@@ -42,9 +43,11 @@ def serve_data_view(request):
         "ethics_students" : len(ethics_students),
         "net_students" : len(net_students)
         }
+        #returning to index.js which loads it in index.html
         return JsonResponse(context)
 
 
+#loads the home page if the user is authenticated, else redirects him to signup or signin page
 def index(request):
     if request.user.is_authenticated:
         if request.method=="GET":
@@ -56,7 +59,7 @@ def index(request):
         return HttpResponseRedirect(reverse("signup"))
 
 
-
+#Stores user's data into the database and signs him up
 def signup_view(request):
     if request.user.is_authenticated:
         return render(request,'index.html')
@@ -74,7 +77,7 @@ def signup_view(request):
             return render(request,"signup.html")
 
 
-
+#Takes username and password and logs him in if he is already signed up
 def login_view(request):
     if request.user.is_authenticated:
         return render(request,'index.html')
@@ -88,6 +91,7 @@ def login_view(request):
         else:
             return HttpResponseRedirect(reverse("signup"))
 
+#As the name suggests, logs the user out
 def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
@@ -95,6 +99,7 @@ def logout_view(request):
     else:
         return render("error.html",{"message":" You are not logged in"})
 
+#Gets students data from the database and pass it into students.html
 def students_view(request):
     if request.user.is_authenticated:
         students = Student.objects.all()
@@ -131,6 +136,7 @@ def students_view(request):
     else:
         return HttpResponseRedirect(reverse("signup"))
 
+#gets detail of student whose serial number was provided
 def student_detail_view(request,number):
     if request.user.is_authenticated:
         student = Student.objects.get(serial_no=number)
@@ -141,6 +147,7 @@ def student_detail_view(request,number):
     else:
         return HttpResponseRedirect(reverse("signup"))
 
+#Gets all the teachers from the database and passes it in to teachers_html
 def teachers_view(request):
     if request.user.is_authenticated:
         teachers = Teacher.objects.all()
@@ -151,6 +158,7 @@ def teachers_view(request):
     else:
         return HttpResponseRedirect(reverse("signup"))
 
+#Gets details of teacher from the database throgh the id provided
 def teacher_detail_view(request,id):
     if request.user.is_authenticated:
         teacher = Teacher.objects.get(id=id)
