@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Teacher(models.Model):
-    id = models.IntegerField(primary_key=True,default=1)
+    id = models.CharField(primary_key=True,max_length=100)
     first_name = models.CharField(max_length=200,null=True)
     last_name = models.CharField(max_length=200,null=True)
     email = models.CharField(max_length=200,null=True)
@@ -16,7 +16,7 @@ class Teacher(models.Model):
         return f'{self.first_name}'
 
 class Student(models.Model):
-    serial_no = models.IntegerField(primary_key=True,default=1,max_length=100)
+    serial_no = models.CharField(primary_key=True,max_length=100)
     first_name = models.CharField(max_length=40,null=True)
     last_name = models.CharField(max_length=40,null=True)
     subjects = models.CharField(max_length=500,null=True)
