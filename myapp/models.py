@@ -14,6 +14,17 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f'{self.first_name}'
+    
+    def is_valid(self,id,name):
+        print(id)
+        available = Teacher.objects.filter(id=id)
+        print(len(available))
+        print(type(name))
+        if len(available) is 1 and type(name) is str:
+            return True
+        else:
+            return False
+
 
 class Student(models.Model):
     serial_no = models.CharField(primary_key=True,max_length=100)
