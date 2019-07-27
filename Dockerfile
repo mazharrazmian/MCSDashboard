@@ -9,3 +9,6 @@ COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 
 COPY . /code/
+
+
+CMD gunicorn --bind 0.0.0.0:$PORT mcs.wsgi
